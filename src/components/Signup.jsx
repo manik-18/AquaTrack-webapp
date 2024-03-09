@@ -12,12 +12,11 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      localStorage.setItem("email", user.email);
       await signup(email, password);
-      navigate("/");
-      showToast('success', 'Signup successful!');
+      navigate("/login");
+      showToast('success', 'Signup successful now please Login!');
     } catch (error) {
-      showToast('error', error);
+      showToast('error', 'Signup Unsuccessfull');
     }
   };
 
